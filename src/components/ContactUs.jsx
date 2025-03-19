@@ -12,7 +12,7 @@ function ContactUs() {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 shadow-md rounded">
+    <div className="max-w-md mx-auto bg-gray-200 p-8 shadow-md rounded">
       <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">

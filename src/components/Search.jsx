@@ -10,7 +10,7 @@ function Search() {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 shadow-md rounded">
+    <div className="max-w-md mx-auto bg-gray-200 p-8 shadow-md rounded">
       <h2 className="text-2xl font-bold mb-6 text-center">Search</h2>
       <form onSubmit={handleSearch}>
         <div className="mb-4">

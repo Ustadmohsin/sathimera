@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom';
 
  function Footer() {
     return (
-        <footer className="bg-white border-y">
+        <footer className="bg-blue-500 border-y">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
-                            <img
+                            {/* <img
                                 src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
                                 className="mr-3 h-16"
                                 alt="Logo"
-                            />
+                            /> */}
+                            IQRA MARRIAGE BUREAU LOG
                         </Link>
                     </div>
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -21,12 +22,12 @@ import { Link } from 'react-router-dom';
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                    <Link to="/" className="hover:underline text-gray-900">
                                         Home
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
+                                    <Link to="/about" className="hover:underlinet text-gray-900">
                                         About
                                     </Link>
                                 </li>
@@ -38,7 +39,7 @@ import { Link } from 'react-router-dom';
                                 <li className="mb-4">
                                     <a
                                         href="https://github.com/hiteshchoudhary"
-                                        className="hover:underline"
+                                        className="hover:underline text-gray-900"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -46,7 +47,7 @@ import { Link } from 'react-router-dom';
                                     </a>
                                 </li>
                                 <li>
-                                    <Link to="/" className="hover:underline">
+                                    <Link to="/" className="hover:underline text-gray-900">
                                         Discord
                                     </Link>
                                 </li>
@@ -56,12 +57,12 @@ import { Link } from 'react-router-dom';
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
+                                    <Link to="#" className="hover:underline text-gray-900">
                                         Privacy Policy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="#" className="hover:underline">
+                                    <Link to="#" className="hover:underline text-gray-900">
                                         Terms &amp; Conditions
                                     </Link>
                                 </li>
@@ -78,7 +79,7 @@ import { Link } from 'react-router-dom';
                         </a>
                         . All Rights Reserved.
                     </span>
-                    <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+                    <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0 text-gray-900">
                         <Link to="#" className="text-gray-500 hover:text-gray-900">
                             <svg
                                 className="w-4 h-4"

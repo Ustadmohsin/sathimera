@@ -79,6 +79,8 @@ import Register from "./components/Register"
 import Search from "./components/Search"
 import Contact from "./components/ContactUs"
 import MemberShip from "./components/MemberShip";
+import Appdownloading from "./components/Appdownloading";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -94,10 +96,14 @@ const App = () => {
         <Route path="/search" element={<Search />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<MemberShip />} />
+        <Route path="/appdownloading" element={<Appdownloading />} />
+        
         
         
       </Routes>
+      <Footer/>
     </Router>
+  
   );
 };
 
