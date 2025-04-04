@@ -1,52 +1,3 @@
-// import React, { useState } from 'react';
-
-// function Login() {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Add login logic here
-//     console.log('Login submitted:', { email, password });
-//   };
-
-//   return (
-//     <div className="max-w-md mx-auto bg-white p-8 shadow-md rounded">
-//       <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div className="mb-4">
-//           <label className="block mb-2 text-sm font-medium text-gray-600">Email</label>
-//           <input
-//             type="email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//             className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
-//             placeholder="Enter your email"
-//           />
-//         </div>
-//         <div className="mb-6">
-//           <label className="block mb-2 text-sm font-medium text-gray-600">Password</label>
-//           <input
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
-//             placeholder="Enter your password"
-//           />
-//         </div>
-//         <button
-//           type="submit"
-//           className="w-50 bg-blue-600 text-white py-2 rounded hover:bg-blue-500 transition-colors"
-//         >
-//           Login
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Login;
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -62,9 +13,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-200 rounded shadow-md">
-        <h2 className="text-3xl font-extrabold text-center">Login</h2>
+    <div 
+      className="flex justify-center items-center min-h-screen bg-cover bg-center bg-green-100"
+      style={{ backgroundImage: "url('https://example.com/background.jpg')" }} // Replace with your background image URL
+    >
+      <div className="w-full max-w-md p-8 space-y-6 bg-gray-200 bg-opacity-90 rounded shadow-md">
+        <h2 className="text-3xl font-extrabold text-center">Member Login</h2>
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
           <div className="rounded-md shadow-sm -space-y-px">
             <div className="mb-4">
@@ -98,7 +52,7 @@ const LoginPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full py-2 px-4 bg-green-800 text-white font-semibold rounded-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Login
           </button>
@@ -108,15 +62,14 @@ const LoginPage = () => {
             Forgot Password?
           </a>
           <div>
-            {/* Not a member?{' '} */}
-            <h2>Not A Memeber ?</h2> {' '}
+            <h2>Not A Member?</h2>
             <Link to="/register">
-            <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Register Now Free
-          </button>
+              <button
+                type="button"
+                className="w-full py-2 px-4 bg-green-800 text-white font-semibold rounded-md hover:bg-green-950 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                Register Now Free
+              </button>
             </Link>
           </div>
         </div>
@@ -126,4 +79,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-

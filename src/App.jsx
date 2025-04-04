@@ -76,11 +76,15 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home"
 import Login from "./components/Login"
 import Register from "./components/Register"
-import Search from "./components/Search"
+// import Search from "./components/Search"
 import Contact from "./components/ContactUs"
 import MemberShip from "./components/MemberShip";
 import Appdownloading from "./components/Appdownloading";
 import Footer from "./components/Footer";
+import AboutUs from "./components/AboutUs";
+import Sidebar from "./components/Sidebar";
+import Simple from "./components/SearchPages/Simple";
+import Searchnav from "./components/Searchnav";
 
 
 const App = () => {
@@ -93,10 +97,17 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Searchnav />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/membership" element={<MemberShip />} />
         <Route path="/appdownloading" element={<Appdownloading />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/sidebar" element={<Sidebar />} />
+        <Route path="/simple" element={<Simple />} />
+      
+
+
+
         
         
         
