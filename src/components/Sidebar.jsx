@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-// STEP TITLES
 const steps = [
   { label: "Basic Information" },
   { label: "Education Qualification" },
@@ -9,11 +9,9 @@ const steps = [
   { label: "Upload Photo" },
 ];
 
-// MAIN COMPONENT
 export default function ProfileSetup() {
   const [currentStep, setCurrentStep] = useState(0);
 
-  // Decide which form to render based on the active step
   const renderStepContent = (stepIndex) => {
     switch (stepIndex) {
       case 0:
@@ -33,215 +31,172 @@ export default function ProfileSetup() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      {/* Container for the side menu + form content */}
-      <div className="mx-auto max-w-5xl bg-white rounded shadow flex">
-        {/* Sidebar for steps */}
-        <div className="w-1/3 border-r">
+      <div className="mx-auto max-w-6xl bg-white rounded shadow flex flex-col md:flex-row overflow-hidden">
+        <aside className="w-full md:w-1/3 border-r bg-gray-50">
           {steps.map((step, index) => (
             <button
               key={index}
               onClick={() => setCurrentStep(index)}
-              className={`w-full text-left px-4 py-3 
-                border-b 
-                ${
-                  currentStep === index
-                    ? "bg-green-700 text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                } 
-                transition-colors
-              `}
+              className={`w-full text-left px-4 py-3 border-b transition-colors duration-300 font-semibold text-sm md:text-base ${
+                currentStep === index
+                  ? "bg-rose-500 text-white"
+                  : "hover:bg-gray-200 text-gray-700"
+              }`}
             >
               {step.label}
             </button>
           ))}
-        </div>
+        </aside>
 
-        {/* Main content area */}
-        <div className="w-2/3 p-6">
-          {renderStepContent(currentStep)}
-        </div>
+        <main className="w-full md:w-2/3 p-6">
+          <motion.div
+            key={currentStep}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.4 }}
+          >
+            {renderStepContent(currentStep)}
+          </motion.div>
+        </main>
       </div>
     </div>
   );
 }
 
-// ========== STEP FORMS (placeholders) ==========
-
-// STEP 1: Basic Information
 function BasicInformationForm() {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">Basic Information</h2>
-      <form className="space-y-4">
-        <div>
-          <label className="block mb-1 font-medium">Full Name</label>
-          <input
-            type="text"
-            className="border border-gray-300 rounded w-full p-2"
-            placeholder="Enter your name"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 font-medium">Date of Birth</label>
-          <input
-            type="date"
-            className="border border-gray-300 rounded w-full p-2"
-          />
-        </div>
-        {/* Add other fields as needed */}
-        <button
-          type="button"
-          className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900"
-        >
-          Save & Continue
-        </button>
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-rose-600">Basic Information</h2>
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <FormInput label="Full Name" placeholder="Enter your name" />
+        <FormInput label="Date of Birth" type="date" />
+        <FormInput label="WhatsApp Mobile No" type="tel" placeholder="Enter WhatsApp number" />
+        <FormInput label="Country" placeholder="Enter country" />
+        <FormInput label="State" placeholder="Enter state" />
+        <FormInput label="City" placeholder="Enter city" />
+        <FormInput label="Place of Birth" placeholder="Enter place of birth" />
+        <FormSelect label="Marital Status" options={["Single", "Married", "Divorced", "Widowed"]} />
+        <FormInput label="Reason of Separation" placeholder="Enter reason of separation" />
+        <FormInput label="Number of Children & Their Ages" placeholder="e.g. 2 children: 5, 7" />
+        <FormInput label="Duration of Separation" placeholder="e.g. 2 years" />
+        <SubmitButton />
       </form>
-    </div>
+    </section>
   );
 }
 
-// STEP 2: Education Qualification
 function EducationQualificationForm() {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">Education Qualification</h2>
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-rose-600">Education Qualification</h2>
       <form className="space-y-4">
-        <div>
-          <label className="block mb-1 font-medium">Highest Qualification</label>
-          <select className="border border-gray-300 rounded w-full p-2">
-            <option value="">Select qualification</option>
-            <option value="HighSchool">High School</option>
-            <option value="Bachelors">Bachelor's</option>
-            <option value="Masters">Master's</option>
-            {/* etc. */}
-          </select>
-        </div>
-        {/* Add other fields as needed */}
-        <button
-          type="button"
-          className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900"
-        >
-          Save & Continue
-        </button>
+        <FormSelect label="Highest Qualification" options={["High School", "Bachelor's", "Master's"]} />
+        <FormTextarea label="About Myself" placeholder="Tell us something about yourself" />
+        <FormInput label="Occupation" placeholder="e.g. Software Engineer" />
+        <FormInput label="Annual Income" placeholder="e.g. $60,000" />
+        <FormSelect label="Employed In" options={["Private Sector", "Government", "Self Employed", "Not Working"]} />
+        <FormTextarea label="House Address" placeholder="Enter your residential address" />
+        <FormInput label="Office Location" placeholder="City or address of office" />
+        <SubmitButton />
       </form>
-    </div>
+    </section>
   );
 }
 
-// STEP 3: Physical Lifestyle
 function PhysicalLifestyleForm() {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">Physical Lifestyle</h2>
-      <form className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block mb-1 font-medium">Height</label>
-            <select className="border border-gray-300 rounded w-full p-2">
-              <option value="">Select</option>
-              <option value="5ft">5 ft</option>
-              <option value="5.5ft">5.5 ft</option>
-              {/* etc. */}
-            </select>
-          </div>
-          <div>
-            <label className="block mb-1 font-medium">Weight</label>
-            <select className="border border-gray-300 rounded w-full p-2">
-              <option value="">Select</option>
-              <option value="50kg">50 kg</option>
-              <option value="60kg">60 kg</option>
-              {/* etc. */}
-            </select>
-          </div>
-          <div>
-            <label className="block mb-1 font-medium">Blood Group</label>
-            <select className="border border-gray-300 rounded w-full p-2">
-              <option value="">Select</option>
-              <option value="A+">A+</option>
-              <option value="O+">O+</option>
-              {/* etc. */}
-            </select>
-          </div>
-          <div>
-            <label className="block mb-1 font-medium">Body Type</label>
-            <select className="border border-gray-300 rounded w-full p-2">
-              <option value="">Select</option>
-              <option value="Slim">Slim</option>
-              <option value="Average">Average</option>
-              <option value="Athletic">Athletic</option>
-              <option value="Heavy">Heavy</option>
-            </select>
-          </div>
-        </div>
-        {/* Add other fields as needed */}
-        <button
-          type="button"
-          className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900"
-        >
-          Save & Continue
-        </button>
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-rose-600">Physical Lifestyle</h2>
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <FormSelect label="Height" options={["5 ft", "5.5 ft", "6 ft"]} />
+        <FormSelect label="Weight" options={["50 kg", "60 kg", "70 kg"]} />
+        <FormSelect label="Blood Group" options={["A+", "O+", "B+", "AB+"]} />
+        <FormSelect label="Body Type" options={["Slim", "Average", "Athletic", "Heavy"]} />
+        <SubmitButton />
       </form>
-    </div>
+    </section>
   );
 }
 
-// STEP 4: Family Details
 function FamilyDetailsForm() {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">Family Details</h2>
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-rose-600">Family Details</h2>
       <form className="space-y-4">
-        <div>
-          <label className="block mb-1 font-medium">Father's Name</label>
-          <input
-            type="text"
-            className="border border-gray-300 rounded w-full p-2"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 font-medium">Mother's Name</label>
-          <input
-            type="text"
-            className="border border-gray-300 rounded w-full p-2"
-          />
-        </div>
-        {/* Add other fields as needed */}
-        <button
-          type="button"
-          className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900"
-        >
-          Save & Continue
-        </button>
+        <FormInput label="Father's Name" />
+        <FormInput label="Mother's Name" />
+        <SubmitButton />
       </form>
-    </div>
+    </section>
   );
 }
 
-// STEP 5: Upload Photo
 function UploadPhotoForm() {
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-4">Upload Photo</h2>
+    <section>
+      <h2 className="text-2xl font-bold mb-4 text-rose-600">Upload Photo</h2>
       <form className="space-y-4">
         <div>
           <label className="block mb-1 font-medium">Profile Photo</label>
           <input type="file" className="border border-gray-300 rounded w-full" />
         </div>
-        <div className="flex items-center space-x-2">
-          <label className="font-medium">Profile Display on Website?</label>
-          <div className="flex items-center space-x-1">
-            <input type="radio" name="display" value="Yes" /> <span>Yes</span>
-            <input type="radio" name="display" value="No" /> <span>No</span>
-          </div>
+        <div className="flex items-center space-x-4">
+          <span className="font-medium">Display profile on website?</span>
+          <label className="inline-flex items-center">
+            <input type="radio" name="display" value="Yes" className="mr-2" /> Yes
+          </label>
+          <label className="inline-flex items-center">
+            <input type="radio" name="display" value="No" className="mr-2" /> No
+          </label>
         </div>
-        {/* Add other fields as needed */}
-        <button
-          type="button"
-          className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900"
-        >
-          Submit
-        </button>
+        <SubmitButton text="Submit" />
       </form>
+    </section>
+  );
+}
+
+// === Shared Components ===
+function FormInput({ label, type = "text", placeholder = "" }) {
+  return (
+    <div>
+      <label className="block mb-1 font-medium">{label}</label>
+      <input type={type} placeholder={placeholder} className="border border-gray-300 rounded w-full p-2" />
     </div>
+  );
+}
+
+function FormSelect({ label, options }) {
+  return (
+    <div>
+      <label className="block mb-1 font-medium">{label}</label>
+      <select className="border border-gray-300 rounded w-full p-2">
+        <option value="">Select</option>
+        {options.map((opt, idx) => (
+          <option key={idx} value={opt}>{opt}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+function FormTextarea({ label, placeholder = "" }) {
+  return (
+    <div>
+      <label className="block mb-1 font-medium">{label}</label>
+      <textarea className="border border-gray-300 rounded w-full p-2" rows="3" placeholder={placeholder}></textarea>
+    </div>
+  );
+}
+
+function SubmitButton({ text = "Save & Continue" }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="px-4 py-2 bg-rose-500 text-white rounded hover:bg-rose-400 transition mt-4"
+    >
+      {text}
+    </motion.button>
   );
 }

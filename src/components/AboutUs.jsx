@@ -1,20 +1,43 @@
-import React from 'react'
+import React from 'react';
 
-function AboutUs() {
+const AboutUs = () => {
   return (
-    <>
-    <p>Now we have started this online match making. We provide you the valuable information, advice, and counselling services to choose your better half for the rest of your life.
-Our Association is the oldest and most successful in India and abroad. Many people have met their life partner through our help and support and got married.
-Now our objective is to give our valued customers, a platform and make convenient for the prospective partners to meet each other online and to achieve success .We always try to understand the needs of the brides, grooms and their parents and provide them the valuable information with 100 percent accuracy.
-The information is always kept confidential. We are hard working and it's quite promising. We have setup our associates (co-workers) in different places and also provide personalized services to those who do not have access to the internet.
-To improve our quality service to our valued customers we are introducing this web site to find best and suitable matrimonial alliances. We will also arrange the meeting for the bride / groom in a convenient place.
-We will put our sincere effort to settle the alliance and make it fruitful. In the past, our founder has to request many parents to register their child's name to sathimera.com. He did hard work,Phurohit& Jyotishi and took many pains without thinking his personal benefits.
-sathimera.com has streamlined all its activities and has improved the processes through their hard work in reaching many families in of Maharastra and abroad.
-Now on the same line, Solapur division is making an effort to reach globally by virtue of hosting web site "www.sathimera.com".sathimera.com has done lot of pioneering work in developing the community with its innovative ideas and giving a common platform.
-We have also organized many matrimonial meetings for the prospective partners. Now, you will be able to access all the details sitting at home with one one click of a button through our website, www.sathimera.com. Our website will reduce your travelling, contact time and your cost.
-You can communicate with the prospective partner directly once you become a member. We will also work for the bride/groom till the end. We provide the information based on the input from the bride/ groom. We are not responsible legally for any of your deeds</p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gray-50 py-8 px-4">
+      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
+        <h1 className="text-3xl font-bold text-violet-600 mb-6">About Us</h1>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Now we have started this online matchmaking. We provide you with valuable information, advice, and counselling services to help you choose your better half for the rest of your life.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Our association is one of the oldest and most successful in India and abroad. Many people have met their life partner through our help and support and have gotten married.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Our objective is to provide our valued customers with a convenient online platform for prospective partners to meet and succeed together. We always strive to understand the needs of the brides, grooms, and their parents, providing valuable information with 100% accuracy.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          All information is kept confidential. We work hard and are committed to our cause. Our associates are located in various regions, and we also provide personalized services for those without internet access.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          To enhance our quality of service, we have introduced this website to help find the best and most suitable matrimonial alliances. We also arrange meetings for the bride and groom at convenient locations.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Our sincere efforts are dedicated to settling alliances successfully. In the past, our founder personally requested many parents to register their child’s name on sathimera.com. Despite the challenges, he worked tirelessly without thinking about personal benefits.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Sathimera.com has streamlined all its activities and improved processes through hard work by reaching out to numerous families in Maharashtra and abroad.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          Continuing along the same lines, the Solapur division is making an effort to reach a global audience by hosting the website "www.sathimera.com". Sathimera.com has pioneered community development with innovative ideas and a common platform.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          We have organized many matrimonial meetings for prospective partners. Now, you can access all the details from the comfort of your home with just a click on our website, www.sathimera.com. Our website reduces your travel, contact time, and cost.
+        </p>
+        <p className="text-gray-700 leading-relaxed">
+          You can communicate directly with the prospective partner once you become a member. We will continue to support both the bride and groom until the end. Note that the information provided is based on inputs from the bride and groom, and we are not legally responsible for any actions taken based on this information.
+        </p>
+      </div>
+    </div>
+  );
+};
 
-export default AboutUs
+export default AboutUs;

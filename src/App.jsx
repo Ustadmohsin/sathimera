@@ -76,15 +76,19 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home"
 import Login from "./components/Login"
 import Register from "./components/Register"
-// import Search from "./components/Search"
 import Contact from "./components/ContactUs"
 import MemberShip from "./components/MemberShip";
 import Appdownloading from "./components/Appdownloading";
 import Footer from "./components/Footer";
 import AboutUs from "./components/AboutUs";
 import Sidebar from "./components/Sidebar";
-import Simple from "./components/SearchPages/Simple";
 import Searchnav from "./components/Searchnav";
+import Forgot from "./components/Forgot";
+import Simple from "./components/SearchPages/Simple";
+import Advance from "./components/SearchPages/Advance";
+import MatchIDpage from "./components/SearchPages/MatchIDpage";
+import Marital from "./components/SearchPages/Marital";
+
 
 
 const App = () => {
@@ -104,6 +108,13 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/sidebar" element={<Sidebar />} />
         <Route path="/simple" element={<Simple />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/advance" element={<Advance />} />
+        <Route path="/matchidpage" element={<MatchIDpage />} />
+        <Route path="/marital" element={<Marital/>} />
+        
+        
       
 
 

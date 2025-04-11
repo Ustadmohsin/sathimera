@@ -1,43 +1,25 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import Searchnav from "../Searchnav";
+import Searchnav from "../Searchnav"; // Make sure the path to Searchnav is correct
 
-function SimplePage() {
+function Marital() {
   const [gender, setGender] = useState("");
   const [age, setAge] = useState("");
   const [religion, setReligion] = useState("");
+  const [maritalStatus, setMaritalStatus] = useState(""); // New state for marital status
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("Search Parameters:", { gender, age, religion });
+    // Handle your search logic here – for now we simply log the form values.
+    console.log("Search Parameters:", { gender, age, religion, maritalStatus });
   };
 
   return (
     <>
-      <div>
+      <div >
         <Searchnav />
-        <motion.div
-          className="container mx-auto p-4 md:p-6 bg-green-200 "
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <motion.h1
-            className="text-2xl md:text-3xl font-bold mb-6 text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            Simple Search
-          </motion.h1>
-
-          <motion.form
-            onSubmit={handleSearch}
-            className="max-w-md mx-auto space-y-6 bg-white p-6 rounded-2xl shadow-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
+        <div className="container mx-auto p-6">
+          <h1 className="text-2xl font-bold mb-6 text-center">Marital Status Search</h1>
+          <form onSubmit={handleSearch} className="max-w-md mx-auto space-y-4">
             {/* Gender Selection */}
             <div>
               <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
@@ -47,7 +29,7 @@ function SimplePage() {
                 id="gender"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-300"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               >
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -67,7 +49,7 @@ function SimplePage() {
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 placeholder="Enter Age"
-                className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-300"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               />
             </div>
 
@@ -80,7 +62,7 @@ function SimplePage() {
                 id="religion"
                 value={religion}
                 onChange={(e) => setReligion(e.target.value)}
-                className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-300"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
               >
                 <option value="">Select Religion</option>
                 <option value="hindu">Hindu</option>
@@ -91,22 +73,39 @@ function SimplePage() {
               </select>
             </div>
 
+            {/* Marital Status Selection */}
+            <div>
+              <label htmlFor="maritalStatus" className="block text-sm font-medium text-gray-700">
+                Marital Status
+              </label>
+              <select
+                id="maritalStatus"
+                value={maritalStatus}
+                onChange={(e) => setMaritalStatus(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+              >
+                <option value="">Select Marital Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+              </select>
+            </div>
+
             {/* Search Button */}
             <div>
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
+              <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-500 transition"
+                className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-500 transition"
               >
                 Search
-              </motion.button>
+              </button>
             </div>
-          </motion.form>
-        </motion.div>
+          </form>
+        </div>
       </div>
     </>
   );
 }
 
-export default SimplePage;
+export default Marital;
