@@ -10,8 +10,8 @@ pipeline {
             steps {
                 script {
                     sh 'pwd'
-                    sh 'sudo npm i'
-                    sh 'sudo npm run dev -- --host'
+                    sh 'npm i'
+                    sh 'npm run dev -- --host'
                     }
                 }
             }
