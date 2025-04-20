@@ -11,7 +11,9 @@ pipeline {
                 script {
                     sh 'pwd'
                     sh 'npm i'
-                    sh 'npm run dev -- --host'
+                    sh 'npm run build'
+                    sh 'sudo cp -r dist/* /var/www/html/'
+                    sh 'systemctl restart apache2'
                     }
                 }
             }
