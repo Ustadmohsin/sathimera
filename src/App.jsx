@@ -88,6 +88,8 @@ import Simple from "./components/SearchPages/Simple";
 import Advance from "./components/SearchPages/Advance";
 import MatchIDpage from "./components/SearchPages/MatchIDpage";
 import Marital from "./components/SearchPages/Marital";
+import Admin from "./components/AdminPages/Admin";
+
 
 
 
@@ -113,6 +115,10 @@ const App = () => {
         <Route path="/advance" element={<Advance />} />
         <Route path="/matchidpage" element={<MatchIDpage />} />
         <Route path="/marital" element={<Marital/>} />
+        <Route path="/admin" element={<Admin/>} />
+
+        
+        
         
         
       

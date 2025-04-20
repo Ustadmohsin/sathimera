@@ -44,7 +44,7 @@ const rightVariants = {
 const OfficeAddresses = () => {
   return (
     <motion.div 
-      className="p-4 md:p-8 bg-green-200 min-h-screen"
+      className="p-4 md:p-8 bg-green-200 min-h-screen mt-5"
       initial="hidden"
       animate="visible"
       variants={containerVariants}

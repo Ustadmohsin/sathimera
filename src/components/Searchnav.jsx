@@ -110,43 +110,89 @@
 
 // export default SearchPage;
 
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { motion } from "framer-motion";
+
+// function Searchnav() {
+//   return (
+//     <motion.nav
+//       initial={{ y: -50, opacity: 0 }}
+//       animate={{ y: 0, opacity: 1 }}
+//       transition={{ duration: 0.6, ease: "easeOut" }}
+//       className="bg-green-100"
+//     >
+//       <div className="min-h-5 flex flex-col items-center">
+//         {/* Navigation Bar (Sticky) */}
+//         <div className="w-full bg-gray-200 p-4 shadow-md sticky top-0 z-50">
+//           <div className="flex flex-wrap justify-center gap-3">
+//             {[
+//               { to: "/simple", label: "Simple Search" },
+//               { to: "/advance", label: "Advance Search" },
+//               { to: "/matchidpage", label: "Match ID Search" },
+//               { to: "/marital", label: "Marital Status Search" },
+//             ].map((item, index) => (
+//               <motion.div
+//                 key={index}
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.95 }}
+//               >
+//                 <Link to={item.to}>
+//                   <button className="px-4 py-2 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-500 transition duration-300 w-full">
+//                     {item.label}
+//                   </button>
+//                 </Link>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </motion.nav>
+//   );
+// }
+
+// export default Searchnav;
+
+
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-function Searchnav() {
+const Searchnav = () => {
+  const navItems = [
+    { to: "/simple", label: "Simple Search" },
+    { to: "/advance", label: "Advance Search" },
+    { to: "/matchidpage", label: "Match ID Search" },
+    { to: "/marital", label: "Marital Status Search" },
+  ];
+
   return (
-    
-    <nav>
-    <div className="min-h-5 flex flex-col items-center bg-green-200">
-      {/* Navigation Bar (Fixed) */}
-      <div className="w-full bg-gray-200 p-4 shadow-md sticky top-0 z-50">
-        <div className="flex flex-wrap justify-center gap-2">
-          <Link to="/simple">
-            <button className="px-4 py-2 bg-violet-600 text-white font-semibold rounded-md hover:bg-violet-500 transition">
-              Simple Search
-            </button>
-          </Link>
-          <Link to="/advance">
-            <button className="px-4 py-2 bg-violet-600 text-white font-semibold rounded-md hover:bg-violet-500 transition">
-              Advance Search
-            </button>
-          </Link>
-          <Link to="/matchidpage">
-            <button className="px-4 py-2 bg-violet-600 text-white font-semibold rounded-md hover:bg-violet-500 transition">
-              Match ID Search
-            </button>
-          </Link>
-          <Link to="/marital">
-            <button className="px-4 py-2 bg-violet-600 text-white font-semibold rounded-md hover:bg-violet-500 transition">
-              Marital Status Search
-            </button>
-          </Link>
+    <motion.nav
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="bg-green-100 w-full"
+    >
+      <div className="w-full sticky top-0 z-50 bg-white shadow-md">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-center md:justify-between gap-3 sm:gap-4">
+          {navItems.map((item, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
+            >
+              <Link to={item.to}>
+                <button className="w-full sm:w-auto px-4 py-2 bg-violet-600 text-white font-semibold rounded-md hover:bg-violet-500 transition duration-300">
+                  {item.label}
+                </button>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
-    </nav>
+    </motion.nav>
   );
-}
+};
 
 export default Searchnav;
-

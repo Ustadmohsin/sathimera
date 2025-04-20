@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 const steps = [
   { label: "Basic Information" },
@@ -30,7 +29,7 @@ export default function ProfileSetup() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-gray-100 p-4 mt-20">
       <div className="mx-auto max-w-6xl bg-white rounded shadow flex flex-col md:flex-row overflow-hidden">
         <aside className="w-full md:w-1/3 border-r bg-gray-50">
           {steps.map((step, index) => (
@@ -49,15 +48,7 @@ export default function ProfileSetup() {
         </aside>
 
         <main className="w-full md:w-2/3 p-6">
-          <motion.div
-            key={currentStep}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.4 }}
-          >
-            {renderStepContent(currentStep)}
-          </motion.div>
+          {renderStepContent(currentStep)}
         </main>
       </div>
     </div>
@@ -191,12 +182,8 @@ function FormTextarea({ label, placeholder = "" }) {
 
 function SubmitButton({ text = "Save & Continue" }) {
   return (
-    <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="px-4 py-2 bg-rose-500 text-white rounded hover:bg-rose-400 transition mt-4"
-    >
+    <button className="px-4 py-2 bg-rose-500 text-white rounded hover:bg-rose-400 transition mt-4">
       {text}
-    </motion.button>
+    </button>
   );
 }

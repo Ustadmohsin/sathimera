@@ -322,7 +322,7 @@ const HomeLayout = () => {
             variants={stepVariants}
             whileHover="hover"
             whileTap="tap"
-            onClick={() => handleStepClick("/search")}
+            onClick={() => handleStepClick("/matchidpage")}
           >
             <div className="mb-4 text-3xl">
               <CgProfile className="text-6xl mx-auto mb-2 text-rose-600" />

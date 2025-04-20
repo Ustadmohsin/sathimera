@@ -147,7 +147,7 @@ const PricingCard = ({ tier, price, features, qrImage }) => (
 const PricingGrid = () => {
   return (
     <div
-      className="flex justify-center items-center min-h-screen bg-cover bg-center bg-green-200"
+      className="flex justify-center items-center min-h-screen bg-cover bg-center bg-green-200 mt-7"
       style={{ backgroundImage: "url('https://example.com/background.jpg')" }}
     >
       <div className="container mx-auto p-4">
