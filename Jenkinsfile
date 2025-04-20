@@ -13,7 +13,7 @@ pipeline {
                     sh 'npm i'
                     sh 'sudo npm run build'
                     sh 'sudo cp -r dist/* /var/www/html/'
-                    sh 'systemctl restart apache2'
+                    sh 'sudo systemctl restart apache2'
                     }
                 }
             }
