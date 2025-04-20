@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        NODE_VERSION = '20.0.0' // optional if you're using nvm or node is pre-installed
+        NODE_VERSION = '20.0.0' //     optional if you're using nvm or node is pre-installed
             }
 
     stages {
