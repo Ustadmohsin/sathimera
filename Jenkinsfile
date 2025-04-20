@@ -6,10 +6,12 @@ pipeline {
             }
 
     stages {
-        stage('Clone repo') {
+        stage('Building Code') {
             steps {
                 script {
                     sh 'pwd'
+                    sh 'sudo npm i'
+                    sh 'sudo npm run dev -- --host'
                     }
                 }
             }
