@@ -4,7 +4,7 @@ export default function Admin() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-slate-500 border border-slate-600 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-lg">
-        <h1 className="text-4xl font-bold text-center text-white mb-6">Admin Login</h1>
+        <h1 className="text-4xl font-bold text-center text-white mb-6">New Admin Login</h1>
         <form action="#" method="POST">
           {/* Username Input */}
           <div className="relative my-4">
@@ -41,7 +41,7 @@ export default function Admin() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
+            className="w-full bg-rose-600 text-white py-2 rounded-md hover:bg-rose-500 transition duration-300"
           >
             Login
           </button>
