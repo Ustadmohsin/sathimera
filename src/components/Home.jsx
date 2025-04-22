@@ -96,7 +96,8 @@
 //             animate={{ y: [0, -10, 0] }}
 //             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
 //           >
-                IQRA MARRIRGE BUREAU solapur ....mohsin
+                IQRA MARRIRGE BUREAU solapur ....
+
 //           </motion.h1>
 //           <motion.h2 
 //             className="mt-4 text-lg"
