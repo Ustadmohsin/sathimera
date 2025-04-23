@@ -1,30 +1,44 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_VERSION = '20.0.0' //     optional if you're using nvm or node is pre-installed
-            }
-
+    // Connect to your GitHub repository
     stages {
-        stage('Building Code') {
+        stage('Checkout') {
             steps {
-                script {
-                    sh 'pwd'
-                    sh 'npm i'
-                    sh 'sudo npm run build'
-                    sh 'sudo cp -r dist/* /var/www/html/'
-                    sh 'sudo systemctl restart apache2'
-                    }
-                }
+                git(
+                    url: 'https://github.com/Ustadmohsin/React_programs.git',
+                    branch: 'main', // Replace with your branch name
+                    credentialsId: 'your-github-credentials' // If private repo
+                )
             }
         }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+        stage('Deploy to Server') {
+            steps {
+                sh 'sudo cp -r dist/* /var/www/html/'
+                sh 'sudo systemctl restart apache2'
+            }
+        }
+    }
 
     post {
         success {
-            echo '✅ Deployed successfully to Apache!'
+            echo '✅ Deployment successful!'
         }
         failure {
-            echo '❌ Deployment failed.'
+            echo '❌ Deployment failed!'
         }
     }
 }
