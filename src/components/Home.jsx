@@ -215,7 +215,7 @@ function Home() {
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           >
-            IQRA MARRIAGE BUREAU Solapur ...
+            IQRA MARRIAGE BUREAU Solapur ... from AIZTS_infotech 
           </motion.h1>
           <motion.h2
             className="mt-4 text-md sm:text-lg"
